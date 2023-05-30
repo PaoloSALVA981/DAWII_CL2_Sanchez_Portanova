@@ -29,8 +29,6 @@ public class UsuarioService {
     public Usuario guardarUsuario(Usuario usuario){
         usuario.setPassusuario(bCryptPasswordEncoder
                 .encode(usuario.getPassusuario()));
-        Especialidad especialidad = especialidadRepository.findByNomesp("IDIOMAS");
-        usuario.setEspecialidads(new HashSet<Especialidad>(Arrays.asList(especialidad)));
 
         return usuarioRepository.save(usuario);
     }}

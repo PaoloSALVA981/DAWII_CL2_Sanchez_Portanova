@@ -18,7 +18,7 @@ import pe.edu.cibertec.DAWII_CL2_Sanchez_Portanova.service.UsuarioDetalleService
 public class SecurityConfig {
 
     @Autowired
-    private final UsuarioDetalleService usuarioDetalleService;
+
 
     @Bean
     public SecurityFilterChain configure(HttpSecurity http) throws Exception{
@@ -48,7 +48,6 @@ public class SecurityConfig {
     public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider authenticationProvider =
                 new DaoAuthenticationProvider();
-        authenticationProvider.setUserDetailsService(usuarioDetalleService);
         authenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
         return authenticationProvider;
     }
